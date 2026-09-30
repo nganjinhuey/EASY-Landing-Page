@@ -324,6 +324,16 @@ h3{font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
   font-weight:700;line-height:1;max-width:9.4em;margin-bottom:16px;
 }
 .hero-sub{font-size:16px;line-height:1.5;max-width:100%;color:var(--text-2);text-wrap:pretty}
+/* Malay headline, measured at the live font (58.9px at 1280):
+     "WeCare Lite."          5.436em
+     "WeCare Lite. Manfaat"  9.162em
+     "Manfaat Kesihatan"     7.917em
+     "Untuk Keperluan"       7.139em
+     "Harian Anda."          5.437em
+   The 9.4em cap above is wide enough to pull "Manfaat" up onto line 1,
+   which left "Anda." stranded alone on line 4. Any cap in [7.917, 9.162)
+   breaks after the full stop instead and fills all four lines. */
+html[lang="ms-MY"] .hero h1{max-width:8.6em}
 
 /* The key promotional message: what the promo code actually gets you. */
 .hero-promo{
@@ -2653,6 +2663,14 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
      line where the other two take two — reserve the line so every
      description starts on the same baseline. */
   .incl-title{min-height:2.44em}
+}
+/* "Ambil di Farmasi atau Hantar ke Rumah" needs a third line in the
+   1024-1199 band, where the card is at its narrowest in the 3-column
+   row; the English title fits in two, so the reservation follows the
+   language rather than penalising both. .incl-title's line-height is
+   1.22, so three lines is 3.66em. */
+@media (min-width:1024px) and (max-width:1199px){
+  html[lang="ms-MY"] .incl-title{min-height:3.66em}
   .cej-flow{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cej-step:not(:last-child)::after{display:none}
   .rmo-flow{grid-template-columns:repeat(3,minmax(0,1fr))}
