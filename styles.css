@@ -2931,3 +2931,67 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
   .app-title{margin-top:30px;font-size:24px}
   .app-desc{font-size:15.5px}
 }
+
+/* =====================================================================
+   42. THE PARTNERS — who makes WeCare Lite possible
+   Three equal cards, nothing in them but a logo, a name, a role and a
+   sentence. White ground so the two dark bands on either side of this
+   part of the page keep their weight, and so the logos sit on the
+   neutral each brand expects.
+   ===================================================================== */
+/* A supporting band, not a feature one: it runs at ~60% of the standard
+   section rhythm, the headline sits below the page's h2 scale, and the
+   shadow is lighter than the cards elsewhere, so it never competes with
+   the hero, the benefits or the dark step section. */
+.orgs{background:#fff;padding-block:calc(var(--sec-y) * .58)}
+.orgs .section-head{margin-bottom:30px;max-width:820px}
+#orgs-title{font-size:clamp(29px,3.1vw,40px)}
+
+.orgs-grid{display:grid;gap:12px;grid-template-columns:1fr}
+.org-card{
+  display:flex;flex-direction:column;align-items:center;text-align:center;
+  padding:22px 20px;
+  background:#fff;border:1px solid var(--line);border-radius:18px;
+  box-shadow:0 1px 2px rgba(7,19,63,.04),0 12px 26px -20px rgba(7,19,63,.38);
+  transition:transform .25s ease,border-color .25s ease,box-shadow .25s ease;
+}
+@media (hover:hover){
+  .org-card:hover{
+    transform:translateY(-3px);border-color:rgba(0,191,174,.42);
+    box-shadow:0 2px 4px rgba(7,19,63,.05),0 18px 34px -22px rgba(7,19,63,.4);
+  }
+}
+@media (prefers-reduced-motion:reduce){.org-card{transition:none}.org-card:hover{transform:none}}
+
+/* One plate height for all three, then a per-logo cap so they balance by
+   eye rather than by raw height: HEYDOC is a stacked lockup, so matching
+   its height to the two single-line marks would leave its wordmark
+   noticeably smaller. Measured widths land within ~15px of each other. */
+.org-logo{display:flex;align-items:center;justify-content:center;height:52px;margin-bottom:16px}
+.org-logo img{width:auto;height:auto;max-width:100%;object-fit:contain}
+.org-logo--wk img{max-height:38px}
+.org-logo--hd img{max-height:51px}
+.org-logo--mc img{max-height:36px}
+
+.org-name{font-size:21px;font-weight:800;letter-spacing:-.025em;line-height:1.15;color:var(--navy)}
+.org-role{
+  margin-top:6px;font-size:14px;font-weight:700;letter-spacing:.01em;
+  line-height:1.4;color:var(--accent-ink);
+}
+.org-desc{margin-top:11px;max-width:33ch;font-size:14.5px;line-height:1.55;color:var(--text-2)}
+
+@media (min-width:700px){
+  .orgs-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+  .org-card{padding:24px 18px}
+}
+@media (min-width:1024px){
+  .orgs-grid{gap:20px}
+  .org-card{padding:30px 26px 28px}
+  .org-logo{height:56px;margin-bottom:18px}
+  .org-logo--wk img{max-height:41px}
+  .org-logo--hd img{max-height:55px}
+  .org-logo--mc img{max-height:38px}
+  .org-name{font-size:22px}
+  .org-role{font-size:14.5px;margin-top:7px}
+  .org-desc{margin-top:12px;font-size:15.5px}
+}

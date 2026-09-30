@@ -1,0 +1,10 @@
+# Local reference material, not part of this project (1.5 GB / 36k files)
+INFII Website Reference/
+
+# macOS
+.DS_Store
+**/.DS_Store
+
+# Editor / OS noise
+*.swp
+Thumbs.db
