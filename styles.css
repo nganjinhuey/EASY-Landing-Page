@@ -1133,21 +1133,62 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
 /* =====================================================================
    14. FOOTER
    ===================================================================== */
-.site-footer{background:var(--bg-deep);border-top:1px solid var(--line);
+.site-footer{border-top:1px solid var(--line);
   color:var(--text-3);padding-block:52px 34px}
 .footer-inner{display:grid;gap:30px}
 .footer-logo{width:170px;height:auto;filter:brightness(0) invert(1);opacity:.92}
 .footer-tagline{margin-top:16px;font-size:14.5px;font-weight:500;color:var(--text-2)}
-.footer-nav{display:grid;gap:14px}
-.footer-nav a{font-size:14.5px;color:var(--text-2);transition:color .2s ease}
+/* Registered entity, where it sits and how to reach it. Sits between the
+   brand and the link list so the footer reads name, address, contact,
+   links rather than turning the links into a contact list. */
+.footer-contact{max-width:34ch}
+.fco-name{font-size:14.5px;font-weight:700;color:var(--text-2)}
+.fco-addr{margin-top:6px;font-size:13.5px;line-height:1.6;font-style:normal;color:var(--text-3)}
+.fco-reach{display:flex;flex-wrap:wrap;align-items:center;gap:0 10px;margin-top:10px;font-size:13.5px}
+.fco-reach a{color:var(--text-2);transition:color .2s ease}
+.fco-reach a:hover{color:var(--accent-ink);text-decoration:underline}
+.fco-sep{color:var(--text-3);opacity:.6}
+
+.footer-nav{display:grid;gap:13px}
+.footer-nav a{
+  display:inline-flex;align-items:center;gap:10px;
+  font-size:14.5px;color:var(--text-2);transition:color .2s ease;
+}
+.footer-nav a .ico{color:var(--icon);opacity:.8;flex:none;transition:opacity .2s ease}
 .footer-nav a:hover{color:var(--accent-ink)}
+.footer-nav a:hover .ico{opacity:1}
+
+/* Website and the two social accounts: mark only, in a soft glass chip.
+   The brand glyphs are the platforms' own, so they take the fill
+   treatment rather than the page's stroke icons. */
+.footer-social{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.footer-social a{
+  display:grid;place-items:center;width:38px;height:38px;border-radius:50%;
+  background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.14);
+  color:var(--text-2);
+  transition:background-color .2s ease,border-color .2s ease,color .2s ease,transform .2s ease;
+}
+.footer-social a:hover{
+  background:rgba(0,214,196,.16);border-color:rgba(0,214,196,.45);
+  color:var(--turq);transform:translateY(-2px);
+}
+.footer-social a:focus-visible{outline:2px solid var(--turq);outline-offset:3px}
+@media (prefers-reduced-motion:reduce){.footer-social a{transition:none}.footer-social a:hover{transform:none}}
 .footer-legal{margin-top:34px;padding-top:26px;border-top:1px solid var(--line)}
 .footer-legal p{font-size:12.5px;line-height:1.7;color:var(--text-3)}
+.footer-disclaimer{margin-top:12px}
 .footer-copy{margin-top:14px;opacity:.75}
 
 @media (min-width:768px){
-  .footer-inner{grid-template-columns:1fr auto;align-items:start;gap:44px}
-  .footer-nav{grid-auto-flow:column;gap:32px;align-items:center}
+  /* brand | contact on the first row, links across the second — three
+     columns do not fit here without squeezing the address. */
+  .footer-inner{grid-template-columns:1fr 1fr;align-items:start;gap:32px 40px}
+  .footer-nav{grid-column:1 / -1;grid-auto-flow:column;justify-content:start;gap:32px;align-items:center}
+}
+@media (min-width:1024px){
+  /* room for all three: brand | contact | links down the right edge */
+  .footer-inner{grid-template-columns:minmax(0,1fr) minmax(0,1fr) auto;gap:48px}
+  .footer-nav{grid-column:auto;grid-auto-flow:row;gap:12px;align-items:start;justify-items:end}
 }
 @media (min-width:1024px){.site-footer{padding-block:72px 40px}.footer-logo{width:190px}}
 
@@ -1240,7 +1281,16 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
     radial-gradient(880px 480px at 6% 4%,rgba(0,214,196,.10),transparent 70%),
     linear-gradient(158deg,#04122B 0%,#062440 40%,#05403C 100%);
 }
-.site-footer{background:var(--bg-dark-3);border-top:1px solid rgba(255,255,255,.11)}
+/* Not black. The closing CTA above runs 158deg from #04122B to #05403C;
+   the footer takes the same navy-to-teal family a shade deeper and turns
+   the gradient the other way, so the two read as a pair rather than one
+   long slab, and the seam between them is a deliberate change of angle. */
+.site-footer{
+  background:
+    radial-gradient(820px 420px at 12% 0%,rgba(0,214,196,.13),transparent 66%),
+    linear-gradient(200deg,#071A3E 0%,#08213E 44%,#0A3238 100%);
+  border-top:1px solid rgba(255,255,255,.12);
+}
 
 /* Header: white over the hero, glass-white once scrolled */
 .site-header{

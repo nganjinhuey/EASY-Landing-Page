@@ -404,6 +404,7 @@
       "foot.aria": "Footer",
       "foot.contact": "Contact / Support",
       "foot.legal": "WeCare Lite is an outpatient healthcare benefit offered through WeKongsi. Teleconsultation is free and unlimited. The RM40 Care Episode limit applies to eligible medication and delivery costs; any amount above RM40 is paid by the member.",
+      "foot.notins": "WeKongsi is not an insurance company and does not provide insurance. WeCare Lite is a healthcare benefit, and WeKongsi medical cost-sharing is a community programme &mdash; not an insurance policy.",
       "foot.privacy": "Privacy Policy",
       "foot.rights": "All rights reserved.",
       "foot.terms": "Terms &amp; Conditions",
