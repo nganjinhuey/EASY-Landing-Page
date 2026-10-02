@@ -387,12 +387,36 @@ html[lang="ms-MY"] .hero h1{max-width:8.6em}
 .hero-chip span{display:block;font-size:11.5px;line-height:1.35;color:var(--text-3)}
 .hero-chip b{display:block;font-size:12.5px;font-weight:700;color:var(--text)}
 
-@media (min-width:600px){.hero-figure img{aspect-ratio:16/10;object-position:70% 50%}}
+/* ---- below 1024 the photo is the hero's ground, as it is on desktop --
+   The desktop scrim runs left-to-right because the copy sits in one
+   column there. Here the copy fills the width, so the scrim runs
+   top-to-bottom: solid behind the headline and the buttons, lifting
+   over the lower third where the subject reads. A 16:9 source cropped
+   to a tall portrait only shows a narrow vertical slice, so the
+   object-position picks the slice she is standing in. */
+@media (max-width:1023px){
+  .hero{padding-block:104px 180px}
+  .hero-deco{display:none}
+  .hero-inner{display:block;position:static}
+  .hero-copy{position:relative;z-index:2}
+  .hero-figure{
+    position:absolute;inset:0;z-index:0;margin:0;
+    border-radius:0;border:0;box-shadow:none;background:var(--bg-dark);
+  }
+  .hero-figure img{width:100%;height:100%;aspect-ratio:auto;object-fit:cover;object-position:70% 50%}
+  /* Even over the copy the wash stays above .82 so the muted note and the
+     fine print keep their contrast; it only opens up in the band below
+     the last line, then closes again at the section edge. */
+  .hero-figure::after{
+    background:linear-gradient(180deg,
+      rgba(5,11,31,.90) 0%,rgba(5,11,31,.88) 34%,rgba(5,11,31,.86) 62%,
+      rgba(5,11,31,.82) 78%,rgba(5,11,31,.46) 92%,rgba(5,11,31,.66) 100%);
+  }
+  .hero-chip{left:auto;right:16px;bottom:22px}
+}
 @media (min-width:768px){
   .hero{padding-block:124px 80px}
   .hero-inner{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,.92fr);gap:36px;align-items:center}
-  .hero-figure{margin-top:0}
-  .hero-figure img{aspect-ratio:4/5;object-position:78% 50%}
   /* 768-1023 the copy column is only ~348-480px wide, too narrow to hold
      "Your EASY Benefit," at the desktop size, so the type follows it. */
   .badge-easy{font-size:12.5px;letter-spacing:.17em;padding:10px 19px}
