@@ -3052,6 +3052,13 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
   .orgs-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
   .org-card{padding:24px 18px}
 }
+/* "Digital Healthcare Service Provider" takes a second line between 700
+   and 1199px while the other two roles still fit on one, which started
+   the three descriptions at different heights. .org-role's line-height
+   is 1.4, so two lines is 2.8em. */
+@media (min-width:700px) and (max-width:1199px){
+  .org-role{min-height:2.8em}
+}
 @media (min-width:1024px){
   .orgs-grid{gap:20px}
   .org-card{padding:30px 26px 28px}

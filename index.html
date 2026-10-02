@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="images/wecare-hero-640.jpg" imagesrcset="images/wecare-hero-640.jpg 640w, images/wecare-hero-960.jpg 960w, images/wecare-hero-1280.jpg 1280w, images/wecare-hero-1672.jpg 1672w" imagesizes="(min-width:1024px) 100vw, (min-width:768px) 46vw, calc(100vw - 40px)" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Red+Hat+Display:wght@700;800;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=121">
+<link rel="stylesheet" href="styles.css?v=123">
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -257,7 +257,7 @@
 <!-- ============ 1. HEADER ============ -->
 <header class="site-header" id="top">
   <div class="container header-inner">
-    <a class="brand" href="#top" data-i18n-aria="brand.aria" aria-label="WeCare oleh WeKongsi — laman utama">
+    <a class="brand" href="#top" data-i18n-aria="brand.aria" aria-label="WeCare Lite oleh WeKongsi — laman utama">
       <img class="brand-logo" src="images/wekongsi-logo.png" alt="WeKongsi" width="256" height="78" fetchpriority="high">
       <span class="brand-divider" aria-hidden="true"></span>
       <img class="brand-product" src="images/wecare-logo.png" alt="WeCare"
@@ -637,9 +637,9 @@
 <section class="section orgs" id="partners" aria-labelledby="orgs-title">
   <div class="container">
     <header class="section-head reveal">
-      <p class="eyebrow" data-i18n="orgs.eyebrow">Penjagaan anda, disokong oleh pasukan yang bersepadu</p>
-      <h2 id="orgs-title" data-i18n="orgs.h2">Kenali Pasukan Di Sebalik WeCare Lite</h2>
-      <p class="section-lede" data-i18n="orgs.lede">Tiga rakan kongsi bekerjasama untuk menjadikan pengalaman WeCare Lite anda lebih mudah dan lancar.</p>
+      <p class="eyebrow" data-i18n="orgs.eyebrow">Pengalaman WeCare Lite anda</p>
+      <h2 id="orgs-title" data-i18n="orgs.h2">Siapa Di Sebalik WeCare Lite?</h2>
+      <p class="section-lede" data-i18n="orgs.lede">WeKongsi mengedarkan perkhidmatan HEYDOC Health terpilih melalui WeCare Lite, dengan akses disokong oleh platform MiCare MyMed.</p>
     </header>
 
     <ul class="orgs-grid">
@@ -648,17 +648,17 @@
           <img src="images/wekongsi-logo.png" alt="" width="256" height="78" loading="lazy" decoding="async">
         </div>
         <h3 class="org-name">WeKongsi</h3>
-        <p class="org-role" data-i18n="orgs.r1">Platform WeCare Lite Anda</p>
-        <p class="org-desc" data-i18n="orgs.d1">Daftar di WeKongsi, masukkan kod promosi EASY dan aktifkan manfaat WeCare Lite anda.</p>
+        <p class="org-role" data-i18n="orgs.r1">Pengedar WeCare Lite</p>
+        <p class="org-desc" data-i18n="orgs.d1">WeKongsi mengedarkan perkhidmatan HEYDOC Health terpilih melalui program WeCare Lite dan menyediakan platform untuk ahli mengakses WeCare Lite.</p>
       </li>
 
       <li class="org-card reveal">
         <div class="org-logo org-logo--hd">
           <img src="images/heydoc-logo-420.png" alt="" width="420" height="174" loading="lazy" decoding="async">
         </div>
-        <h3 class="org-name">HEYDOC</h3>
-        <p class="org-role" data-i18n="orgs.r2">Rakan Penjagaan Kesihatan Anda</p>
-        <p class="org-desc" data-i18n="orgs.d2">Menyokong pengalaman penjagaan kesihatan di sebalik WeCare Lite, termasuk telekonsultasi dan e-preskripsi.</p>
+        <h3 class="org-name">HEYDOC Health</h3>
+        <p class="org-role" data-i18n="orgs.r2">Penyedia Perkhidmatan Kesihatan Digital</p>
+        <p class="org-desc" data-i18n="orgs.d2">HEYDOC Health menggerakkan perkhidmatan kesihatan di sebalik WeCare Lite, termasuk konsultasi dengan doktor berlesen, perkhidmatan teleperubatan dan penyelarasan penjagaan kesihatan pesakit luar.</p>
       </li>
 
       <li class="org-card reveal">
@@ -667,7 +667,7 @@
         </div>
         <h3 class="org-name">MiCare</h3>
         <p class="org-role" data-i18n="orgs.r3">Platform Akses Penjagaan Kesihatan</p>
-        <p class="org-desc" data-i18n="orgs.d3">Menyediakan aplikasi MiCare MyMed untuk mengakses telekonsultasi, berhubung dengan doktor serta menguruskan perkhidmatan ubat anda.</p>
+        <p class="org-desc" data-i18n="orgs.d3">MiCare menyediakan aplikasi MyMed yang digunakan untuk mengakses telekonsultasi serta menguruskan e-preskripsi dan perkhidmatan ubat.</p>
       </li>
     </ul>
   </div>
@@ -730,7 +730,11 @@
       <div class="faq-list">
         <div class="faq-item">
           <h3><button type="button" class="faq-q" aria-expanded="true" aria-controls="faq-p1" id="faq-b1" data-i18n="faq.q1">Apakah itu WeCare Lite?<svg class="ico ico-sm faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
-          <div class="faq-a" id="faq-p1" role="region" aria-labelledby="faq-b1"><div class="faq-a-inner" data-i18n="faq.a1"><p>WeCare Lite ialah manfaat penjagaan kesihatan pesakit luar yang percuma untuk pelanggan EASY yang layak. Anda mendapat telekonsultasi tanpa had, 1 Care Episode sebulan, serta pilihan untuk mengambil ubat di farmasi atau mendapatkan penghantaran.</p></div></div>
+          <div class="faq-a" id="faq-p1" role="region" aria-labelledby="faq-b1"><div class="faq-a-inner" data-i18n="faq.a1"><p>WeCare Lite ialah pelan pesakit luar baharu yang diedarkan oleh WeKongsi, dengan perkhidmatan kesihatan digital disediakan oleh HEYDOC Health.</p></div></div>
+        </div>
+        <div class="faq-item">
+          <h3><button type="button" class="faq-q" aria-expanded="true" aria-controls="faq-p11" id="faq-b11" data-i18n="faq.q11">Siapa yang menyediakan perkhidmatan kesihatan?<svg class="ico ico-sm faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
+          <div class="faq-a" id="faq-p11" role="region" aria-labelledby="faq-b11"><div class="faq-a-inner" data-i18n="faq.a11"><p>Telekonsultasi dan perkhidmatan kesihatan digital berkaitan di bawah WeCare Lite disediakan oleh <b>HEYDOC Health</b>. Akses kepada perkhidmatan ini disokong melalui aplikasi MiCare MyMed.</p></div></div>
         </div>
         <div class="faq-item">
           <h3><button type="button" class="faq-q" aria-expanded="true" aria-controls="faq-p2" id="faq-b2" data-i18n="faq.q2">Apakah yang saya dapat dengan WeCare Lite?<svg class="ico ico-sm faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
@@ -751,7 +755,7 @@
         </div>
         <div class="faq-item">
           <h3><button type="button" class="faq-q" aria-expanded="true" aria-controls="faq-p10" id="faq-b10" data-i18n="faq.q10">Di mana saya boleh akses telekonsultasi?<svg class="ico ico-sm faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
-          <div class="faq-a" id="faq-p10" role="region" aria-labelledby="faq-b10"><div class="faq-a-inner" data-i18n="faq.a10"><p>Telekonsultasi diakses melalui <b>aplikasi MiCare MyMed</b>. Selepas mengaktifkan WeCare Lite, buka aplikasi MiCare MyMed dan pilih TeleMed untuk berhubung dengan doktor.</p></div></div>
+          <div class="faq-a" id="faq-p10" role="region" aria-labelledby="faq-b10"><div class="faq-a-inner" data-i18n="faq.a10"><p>Selepas mengaktifkan WeCare Lite melalui aplikasi web WeKongsi, telekonsultasi diakses melalui <b>aplikasi MiCare MyMed</b>.</p></div></div>
         </div>
         <div class="faq-item">
           <h3><button type="button" class="faq-q" aria-expanded="true" aria-controls="faq-p5" id="faq-b5" data-i18n="faq.q5">Apakah itu Care Episode?<svg class="ico ico-sm faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
@@ -841,7 +845,7 @@
   </div>
 
   <div class="container footer-legal">
-    <p data-i18n="foot.legal">WeCare Lite ialah manfaat penjagaan kesihatan pesakit luar yang ditawarkan melalui WeKongsi. Telekonsultasi adalah percuma dan tanpa had. Had RM40 bagi setiap Care Episode terpakai untuk kos ubat yang layak dan penghantaran; sebarang jumlah melebihi RM40 ditanggung oleh ahli.</p>
+    <p data-i18n="foot.legal">WeCare Lite ialah manfaat penjagaan kesihatan pesakit luar yang diedarkan oleh WeKongsi, dengan perkhidmatan kesihatan digital disediakan oleh HEYDOC Health. Telekonsultasi adalah percuma dan tanpa had. Had RM40 bagi setiap Care Episode terpakai untuk kos ubat yang layak dan penghantaran; sebarang jumlah melebihi RM40 ditanggung oleh ahli.</p>
     <p class="footer-disclaimer" data-i18n="foot.notins">WeKongsi bukan syarikat insurans dan tidak menyediakan insurans. WeCare Lite ialah manfaat penjagaan kesihatan, dan perkongsian kos perubatan WeKongsi ialah program komuniti &mdash; bukan polisi insurans.</p>
     <p class="footer-copy">&copy; <span data-year>2026</span> WeKongsi. <span data-i18n="foot.rights">Hak cipta terpelihara.</span></p>
   </div>
@@ -865,6 +869,6 @@
   <span class="wa-label" aria-hidden="true" data-i18n="wa.label">Perlukan kod promosi? <b>WhatsApp EASY Admin</b></span>
 </a>
 
-<script src="script.js?v=121" defer></script>
+<script src="script.js?v=123" defer></script>
 </body>
 </html>
