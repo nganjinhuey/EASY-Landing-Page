@@ -1070,17 +1070,9 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
 .wk-cta:hover .wk-arrow{transform:translateX(4px)}
 @media (prefers-reduced-motion:reduce){.wk-arrow{transition:none}}
 
-/* Stacked headline: measured em-widths of the three candidate lines decide
-   the break, so both regimes are derived rather than guessed.
-     "WeKongsi Helps Share"           10.449em
-     "Inpatient Medical Costs."       10.870em
-     "WeKongsi Helps Share Inpatient" 14.654em
-   2 lines need font <= measure/10.870; a clean 3-line break needs
-   font > measure/10.449. Between those the last line is left holding the
-   orphan "Costs." alone, which is what the band below 424px avoids. */
+/* The headline is a question now, and the BM reading of it is the long
+   one, so the cap below is what keeps it off a fourth line on phones. */
 @media (min-width:424px) and (max-width:767px){
-  /* Wide enough for 2 lines. The 540px cap also keeps font > measure/14.654,
-     so line 1 stops after "Share" instead of swallowing "Inpatient". */
   /* .wk-grid IS the .container element, so this needs to match the
      specificity of .wk .container{max-width:1500px} to win. */
   .wk .wk-grid{max-width:540px}
@@ -3033,11 +3025,6 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
     align-items:start;gap:clamp(12px,2vw,24px);
   }
   .app-arrow{align-self:center;margin-top:12%}
-  /* Each sentence names one platform, so the break belongs at the full
-     stop. Measured at 44px: line 1 is 452px, line 2 is 714px — both
-     inside the 860px head, so the two-line set holds at every width
-     from 900px up. */
-  #apps-title span{display:block}
   /* The connector has to span the gap between the two devices or it
      reads as a speck; measured phone-to-phone gap is 188-230px here. */
   .app-arrow{height:auto;width:clamp(88px,9vw,124px)}
