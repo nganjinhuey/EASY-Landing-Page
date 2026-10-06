@@ -99,7 +99,7 @@ a{color:inherit;text-decoration:none}
 s{text-decoration-thickness:1.5px}
 
 body{
-  font-family:"Outfit",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  font-family:"Red Hat Text",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
   font-size:15.5px;line-height:1.6;font-weight:400;
   color:var(--text-2);
   background:#fff;
@@ -125,7 +125,7 @@ section[id]{scroll-margin-top:92px}
 
 /* ---------- 4. TYPOGRAPHY ---------- */
 h1,h2,h3{
-  font-family:"Red Hat Display","Outfit",system-ui,sans-serif;
+  font-family:"Red Hat Display","Red Hat Text",system-ui,sans-serif;
   color:var(--text);font-weight:800;letter-spacing:-.03em;line-height:1.04;
 }
 h2,h3{text-wrap:balance}
@@ -156,7 +156,7 @@ h3{font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
 .btn{
   display:inline-flex;align-items:center;justify-content:center;gap:9px;
   min-height:52px;padding:15px 28px;border-radius:var(--r-pill);
-  font-family:"Outfit",sans-serif;font-size:15.5px;font-weight:600;letter-spacing:.01em;
+  font-family:"Red Hat Text",sans-serif;font-size:15.5px;font-weight:600;letter-spacing:.01em;
   text-align:center;cursor:pointer;
   transition:transform .2s ease,box-shadow .25s ease,filter .2s ease,background-color .2s ease,border-color .2s ease;
   -webkit-tap-highlight-color:transparent;
@@ -206,13 +206,16 @@ h3{font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
 }
 .header-inner{display:flex;align-items:center;gap:12px;min-height:68px}
 
-.brand{display:flex;align-items:center;gap:11px;margin-right:auto;min-width:0}
-.brand-logo{height:30px;width:auto;filter:brightness(0) invert(1);opacity:.96}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;min-width:0}
+/* EASY leads, the healthcare ecosystem follows a hairline. The EASY mark
+   keeps its own gold identity — the knock-out filter below is scoped to
+   the WeKongsi and WeCare marks only. */
+.brand-easy{height:26px;width:auto;max-width:none;flex:none}
+.brand-logo{height:24px;width:auto;filter:brightness(0) invert(1);opacity:.96}
 .brand-divider{width:1px;height:22px;background:var(--line-2);flex:none}
 /* The supplied WeCare lockup is stacked (mark over wordmark) with a navy
    wordmark, so on the dark header it takes the same knock-out treatment as
    the WeKongsi mark and returns to full colour once the header goes light. */
-.brand-product{height:34px;width:auto;flex:none;filter:brightness(0) invert(1);opacity:.96}
 .site-nav{display:none}
 .header-cta{flex:none}
 
@@ -229,7 +232,7 @@ h3{font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
 }
 .lang-btn{
   padding:5px 9px;border-radius:var(--r-pill);cursor:pointer;
-  font-family:"Outfit",sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.06em;
+  font-family:"Red Hat Text",sans-serif;font-size:11.5px;font-weight:700;letter-spacing:.06em;
   color:var(--text-2);line-height:1;
   transition:background-color .2s ease,color .2s ease;
 }
@@ -239,23 +242,30 @@ h3{font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
 
 /* The header CTA grew with "Redeem WeCare"; keep it clear of the brand
    on narrow phones, where the gap had closed to 12px. */
-@media (max-width:520px){
+@media (max-width:719px){
   .header-inner{gap:8px}
   .header-cta{padding-inline:14px;font-size:13px}
   .lang-btn{padding:5px 7px;font-size:11px}
-  /* the WeCare lockup is the first thing to give up the row */
-  .brand-divider,.brand-product{display:none}
-  .brand-logo{height:28px}
+  .brand-easy{height:24px}
+  .brand-logo{height:22px}
 }
-@media (max-width:379px){
-  .header-cta{padding-inline:11px;font-size:12px}
-  .brand-logo{height:25px}
+@media (max-width:519px){
+  /* the WeKongsi mark gives way before EASY does */
+  .brand-divider,.brand-logo{display:none}
+  .header-cta{padding-inline:12px;font-size:12.5px}
+}
+@media (max-width:399px){
+  .brand-easy{height:20px}
+  .lang{padding:2px}
+  .lang-btn{padding:4px 6px;font-size:10.5px;letter-spacing:.04em}
+  .header-cta{padding-inline:9px;font-size:11px}
 }
 @media (min-width:768px){
   :root{--pad-x:32px;--sec-y:96px}
   .header-inner{min-height:80px}
-  .brand-logo{height:34px}
-  .brand-product{height:38px}
+  .brand{gap:13px}
+  .brand-easy{height:30px}
+  .brand-logo{height:27px}
 }
 @media (min-width:1024px){
   :root{--pad-x:40px;--sec-y:124px}
@@ -319,21 +329,37 @@ h3{font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
    can produce a 2-line "Your EASY Benefit, / Your Everyday Healthcare."
    — any cap holding line 2 also pulls "Your" up. A cap between 8.412em
    and 10.677em gives the clean 3-line break instead, at any size. */
-.hero h1{
-  font-size:clamp(31px,10vw,44px);
-  font-weight:700;line-height:1;max-width:9.4em;margin-bottom:16px;
+.hero h1{max-width:none;margin-bottom:16px}
+
+/* ---- EASY is the brand anchor; the proposition sits under it --------
+   Gold sampled from the official EASY wordmark: #C9871A through the
+   #F3C84E body to the #FFF6D4 highlight, run as a vertical sheen so it
+   reads metallic rather than flat yellow. EASY is gold wherever it is
+   set as display type; WeCare keeps teal and WeKongsi navy. */
+.gold{
+  color:#F0C14B;
+  background-image:linear-gradient(177deg,#FFF6D4 0%,#F7D264 20%,#E6AF32 44%,
+                   #C9871A 60%,#F2CB5C 80%,#FFF1BA 100%);
+  -webkit-background-clip:text;background-clip:text;
+}
+@supports ((-webkit-background-clip:text) or (background-clip:text)){
+  .gold{color:transparent}
+  .gold.gold--flat{color:#F2C94C}
+}
+.gold--flat{background-image:none}
+.hero-brand{
+  display:block;
+  font-family:"Red Hat Display",sans-serif;
+  font-size:clamp(68px,17.5vw,130px);font-weight:900;
+  letter-spacing:-.05em;line-height:.88;margin-bottom:12px;
+  filter:drop-shadow(0 12px 30px rgba(201,135,26,.38));
+}
+.hero-prop{
+  display:block;max-width:11.5em;
+  font-size:clamp(23px,5.2vw,34px);font-weight:700;
+  letter-spacing:-.022em;line-height:1.1;color:var(--text);
 }
 .hero-sub{font-size:16px;line-height:1.5;max-width:100%;color:var(--text-2);text-wrap:pretty}
-/* Malay headline, measured at the live font (58.9px at 1280):
-     "WeCare Lite."          5.436em
-     "WeCare Lite. Manfaat"  9.162em
-     "Manfaat Kesihatan"     7.917em
-     "Untuk Keperluan"       7.139em
-     "Harian Anda."          5.437em
-   The 9.4em cap above is wide enough to pull "Manfaat" up onto line 1,
-   which left "Anda." stranded alone on line 4. Any cap in [7.917, 9.162)
-   breaks after the full stop instead and fills all four lines. */
-html[lang="ms-MY"] .hero h1{max-width:8.6em}
 
 /* The key promotional message: what the promo code actually gets you. */
 .hero-promo{
@@ -420,7 +446,7 @@ html[lang="ms-MY"] .hero h1{max-width:8.6em}
   /* 768-1023 the copy column is only ~348-480px wide, too narrow to hold
      "Your EASY Benefit," at the desktop size, so the type follows it. */
   .badge-easy{font-size:12.5px;letter-spacing:.17em;padding:10px 19px}
-  .hero h1{font-size:clamp(34px,5.2vw,56px)}
+  .hero-prop{font-size:clamp(26px,4vw,36px)}
   .hero-sub{font-size:17px;max-width:480px}
 }
 @media (min-width:1024px){
@@ -440,7 +466,7 @@ html[lang="ms-MY"] .hero h1{max-width:8.6em}
   .hero-chip span{font-size:12.5px}
   .hero-chip b{font-size:14px}
   .hero-copy{max-width:660px}
-  .hero h1{font-size:clamp(56px,4.6vw,68px);margin-bottom:20px}
+  .hero h1{margin-bottom:20px}
   .hero-sub{font-size:18px;max-width:480px}
   .hero-promo{margin-top:26px;font-size:22px}
   .hero-note{margin-top:9px;font-size:14px}
@@ -864,7 +890,7 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
 .pt-amount{font-family:"Red Hat Display",sans-serif;font-size:52px;font-weight:800;
   letter-spacing:-.045em;color:var(--text);line-height:1;margin:6px 0 8px}
 .pt-amount--after{font-size:36px}
-.pt-amount .per{font-family:"Outfit",sans-serif;font-size:14px;font-weight:500;letter-spacing:0;color:var(--text-3);margin-left:7px}
+.pt-amount .per{font-family:"Red Hat Text",sans-serif;font-size:14px;font-weight:500;letter-spacing:0;color:var(--text-3);margin-left:7px}
 .pt-note{font-size:13.5px;color:var(--text-3)}
 .pt-arrow{display:grid;place-items:center;color:var(--accent-ink)}
 .pt-arrow .ico{width:28px;height:28px;stroke-width:1.8}
@@ -894,7 +920,7 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
 .plan-name{font-size:11.5px;font-weight:700;letter-spacing:.18em;text-transform:uppercase;color:var(--text-3);margin-bottom:12px}
 .plan-price{font-family:"Red Hat Display",sans-serif;font-size:44px;font-weight:800;
   letter-spacing:-.045em;color:var(--text);line-height:1}
-.plan-price .per{font-family:"Outfit",sans-serif;font-size:14px;font-weight:500;letter-spacing:0;color:var(--text-3);margin-left:6px}
+.plan-price .per{font-family:"Red Hat Text",sans-serif;font-size:14px;font-weight:500;letter-spacing:0;color:var(--text-3);margin-left:6px}
 .plan-was{margin-top:10px;font-size:13.5px;color:var(--text-3)}
 .plan-was s{color:rgba(255,255,255,.35)}
 .plan-points{margin-top:18px;display:grid;gap:9px}
@@ -1037,7 +1063,9 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
   background:transparent;border:1px solid rgba(0,214,196,.32);
   font-size:12.5px;font-weight:600;letter-spacing:.01em;color:var(--turq);
 }
-.wk-cta{margin-top:24px;width:100%;min-height:54px}
+/* One line at every width: a wrapped label turns this pill into a slab
+   that out-weighs the RM1,000,000 statement above it. */
+.wk-cta{margin-top:24px;width:100%;min-height:54px;white-space:nowrap}
 .wk-arrow{margin-left:9px;transition:transform .25s ease}
 .wk-cta:hover .wk-arrow{transform:translateX(4px)}
 @media (prefers-reduced-motion:reduce){.wk-arrow{transition:none}}
@@ -1080,7 +1108,9 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
   .wk-price span{font-size:16px}
   .wk-price-sub{font-size:13.5px}
   .wk-incl{margin-top:12px}
-  .wk-cta{margin-top:24px;width:230px;min-height:56px}
+  /* Hug the label rather than sit in a fixed box: 230px was narrower
+     than "Discover WeKongsi", so the button grew a second line. */
+  .wk-cta{margin-top:24px;width:auto;min-height:52px}
 }
 
 /* =====================================================================
@@ -1097,7 +1127,7 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
 .faq-q{
   width:100%;display:flex;align-items:center;justify-content:space-between;gap:16px;
   text-align:left;padding:19px 20px;min-height:60px;cursor:pointer;
-  font-family:"Outfit",sans-serif;font-size:15.5px;font-weight:600;color:var(--text);line-height:1.35;
+  font-family:"Red Hat Text",sans-serif;font-size:15.5px;font-weight:600;color:var(--text);line-height:1.35;
   border-radius:var(--r-card);
 }
 .faq-q:hover{color:var(--accent-ink)}
@@ -1134,7 +1164,7 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
   font-weight:700;line-height:1.03;letter-spacing:-.03em;
   color:var(--text);max-width:11em;margin-inline:0;text-wrap:wrap;
 }
-.final-cta h2 span{color:var(--turq)}
+.final-cta h2 span:not(.gold){color:var(--turq)}
 .fc-lede{margin-top:14px;font-size:15.5px;line-height:1.5;font-weight:500;color:var(--text-2);max-width:40ch}
 
 .fc-action{display:flex;flex-direction:column;align-items:stretch;gap:10px}
@@ -1300,7 +1330,6 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
 .eligibility{background:linear-gradient(180deg,var(--l-teal) 0%,var(--off) 100%)}
 .pricing{background:#fff}
 .incl{background:#fff}
-.cep{background:linear-gradient(180deg,var(--off) 0%,var(--l-teal) 100%)}
 .conditions{background:#fff}
 .renew{background:var(--off)}
 .norenew{background:var(--off)}
@@ -1340,8 +1369,7 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
   --accent-ink:#04625E;--focus:var(--deep);
   background:rgba(255,255,255,.9);
 }
-.site-header.is-stuck .brand-logo,
-.site-header.is-stuck .brand-product{filter:none;opacity:1}
+.site-header.is-stuck .brand-logo{filter:none;opacity:1}
 
 /* Light-mode corrections where the dark build had baked-in darkness */
 .lifestyle-figure{background:#DCF1EF}
@@ -2582,7 +2610,7 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
 }
 .incl-chip-row{margin-top:9px}
 .incl-chip{
-  display:inline-flex;font-family:"Outfit",sans-serif;
+  display:inline-flex;font-family:"Red Hat Text",sans-serif;
   padding:5px 12px;border-radius:var(--r-pill);
   background:var(--l-teal);border:1px solid rgba(0,143,137,.28);
   font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--accent-ink);
@@ -2790,7 +2818,7 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
    border or shadow, so the three benefit cards stay the section's hero. */
 .elig{margin-top:28px;text-align:center}
 .elig-label{
-  font-family:"Outfit",sans-serif;
+  font-family:"Red Hat Text",sans-serif;
   font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;
   color:var(--text-3);
 }
@@ -2861,7 +2889,7 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
   flex:0 0 auto;white-space:nowrap;cursor:pointer;
   padding:11px 20px;border-radius:var(--r-pill);
   background:#fff;border:1px solid var(--line);
-  font-family:"Outfit",sans-serif;font-size:14px;font-weight:600;
+  font-family:"Red Hat Text",sans-serif;font-size:14px;font-weight:600;
   color:var(--navy);
   transition:background-color .2s ease,color .2s ease,border-color .2s ease,box-shadow .2s ease;
 }
@@ -3076,11 +3104,11 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
   .orgs-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
   .org-card{padding:24px 18px}
 }
-/* "Digital Healthcare Service Provider" takes a second line between 700
-   and 1199px while the other two roles still fit on one, which started
-   the three descriptions at different heights. .org-role's line-height
-   is 1.4, so two lines is 2.8em. */
-@media (min-width:700px) and (max-width:1199px){
+/* The roles run one or two lines depending on width and language
+   ("Digital Healthcare Service Provider" is the long one), which started
+   the four descriptions at different heights. Reserve the second line
+   wherever the cards sit side by side. .org-role line-height is 1.4. */
+@media (min-width:700px){
   .org-role{min-height:2.8em}
 }
 @media (min-width:1024px){
@@ -3094,3 +3122,156 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
   .org-role{font-size:14.5px;margin-top:7px}
   .org-desc{margin-top:12px;font-size:15.5px}
 }
+
+/* =====================================================================
+   43. THE EASY STORY — two halves of one idea, bridged by the brand
+   The EASY mark is not a caption under the pair: it sits in the gap and
+   overlaps both cards, with a teal thread running through it, so the
+   composition reads CONNECTIVITY -> EASY <- HEALTHCARE at a glance.
+   The thread and the bridge switch axis with the layout.
+   ===================================================================== */
+.story{
+  background:
+    radial-gradient(820px 520px at 50% 108%,rgba(0,214,196,.17),transparent 64%),
+    radial-gradient(620px 420px at 6% 0%,rgba(18,190,130,.12),transparent 66%),
+    linear-gradient(176deg,#050D26 0%,#071634 44%,#07283C 100%);
+}
+.story .story-head{max-width:720px}
+#story-title{font-size:clamp(28px,4vw,42px)}
+
+.es-pair{position:relative;display:grid;gap:18px;max-width:980px;margin-inline:auto}
+/* the thread the bridge sits on — vertical while the cards stack */
+.es-pair::before{
+  content:"";position:absolute;z-index:0;left:50%;top:12%;bottom:12%;width:2px;
+  transform:translateX(-50%);
+  background:linear-gradient(180deg,rgba(0,214,196,0),rgba(0,214,196,.7),rgba(0,214,196,0));
+}
+
+.es-card{
+  position:relative;z-index:1;overflow:hidden;
+  background:linear-gradient(170deg,rgba(255,255,255,.085) 0%,rgba(255,255,255,.035) 100%),#0A1B3A;
+  border:1px solid rgba(0,214,196,.22);border-radius:var(--r-lg);
+  box-shadow:0 1px 0 rgba(255,255,255,.05) inset,0 28px 54px -32px rgba(0,0,0,.95);
+}
+.es-media{display:block;aspect-ratio:3/2;overflow:hidden;background:rgba(255,255,255,.06)}
+.es-media img{width:100%;height:100%;object-fit:cover;display:block}
+.es-body{padding:22px 22px 26px}
+.es-label{
+  font-size:11px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--accent-ink);margin-bottom:9px;
+}
+.es-title{font-size:22px;font-weight:800;letter-spacing:-.025em;line-height:1.15;color:var(--text)}
+.es-desc{margin-top:9px;font-size:14.5px;line-height:1.6;color:var(--text-2)}
+
+/* ---- the bridge: a dark plate, because the EASY mark is gold on black -- */
+.es-bridge{position:relative;z-index:3;justify-self:center;display:grid;place-items:center;
+  margin-block:-30px}
+.es-plate{
+  display:grid;place-items:center;
+  padding:13px 20px;border-radius:18px;
+  background:linear-gradient(150deg,#15284F 0%,#0A1A3C 55%,#071233 100%);
+  border:1px solid rgba(0,214,196,.4);
+  box-shadow:0 0 0 7px rgba(6,16,42,.92),0 18px 34px -14px rgba(0,0,0,.8),
+             0 0 38px -4px rgba(0,214,196,.55);
+}
+.es-plate img{display:block;width:104px;height:auto}
+
+.story-close{
+  max-width:60ch;margin:34px auto 0;text-align:center;
+  font-size:15.5px;line-height:1.65;color:var(--text-2);
+}
+.story-sign{
+  margin-top:14px;text-align:center;
+  font-family:"Red Hat Display",sans-serif;
+  font-size:clamp(18px,2.4vw,24px);font-weight:800;letter-spacing:-.02em;
+  color:var(--text);
+}
+
+@media (min-width:900px){
+  .es-pair{grid-template-columns:minmax(0,1fr) auto minmax(0,1fr);gap:0;align-items:stretch}
+  .es-bridge{align-self:center}
+  /* thread turns horizontal and runs behind the plate */
+  .es-pair::before{
+    left:8%;right:8%;top:50%;bottom:auto;width:auto;height:2px;transform:translateY(-50%);
+    background:linear-gradient(90deg,rgba(0,214,196,0),rgba(0,214,196,.7) 22%,
+               rgba(0,214,196,.7) 78%,rgba(0,214,196,0));
+  }
+  .es-bridge{margin-block:0;margin-inline:-30px}
+  .es-plate{padding:15px 24px;border-radius:20px;box-shadow:0 0 0 9px rgba(6,18,46,.95),
+    0 22px 44px -18px rgba(0,0,0,.8),0 0 46px -4px rgba(0,214,196,.55)}
+  .es-plate img{width:124px}
+  .es-body{padding:24px 26px 28px}
+  .es-title{font-size:24px}
+  .es-desc{font-size:15px}
+  .story-close{margin-top:40px;font-size:16px}
+  .story-sign{margin-top:16px}
+}
+@media (prefers-reduced-motion:reduce){.es-card{transition:none}}
+
+/* =====================================================================
+   45. HOW TO GET WECARE LITE — the EASY acquisition journey
+   A dark band, where the old step section sat, so the page keeps its
+   light/dark rhythm. Four numbered steps, no photography: the sequence
+   is the content.
+   ===================================================================== */
+.getx{
+  position:relative;overflow:hidden;
+  background:
+    radial-gradient(760px 520px at 14% 6%,rgba(0,214,196,.20),transparent 62%),
+    radial-gradient(660px 480px at 88% 94%,rgba(18,190,130,.18),transparent 64%),
+    linear-gradient(152deg,#061634 0%,#07293F 34%,#05433E 68%,#0A5540 100%);
+}
+.getx-grid{display:grid;gap:14px}
+.getx-step{
+  position:relative;padding:22px 20px;border-radius:var(--r-card);
+  background:linear-gradient(170deg,rgba(255,255,255,.085) 0%,rgba(255,255,255,.035) 100%);
+  border:1px solid rgba(0,214,196,.22);
+  box-shadow:0 24px 48px -32px rgba(0,0,0,.95);
+}
+.getx-num{
+  display:block;font-family:"Red Hat Display",sans-serif;
+  font-size:30px;font-weight:800;letter-spacing:-.05em;line-height:1;
+  color:var(--turq);margin-bottom:12px;
+}
+.getx-title{font-size:17px;font-weight:700;letter-spacing:-.02em;line-height:1.25;color:#fff}
+.getx-desc{margin-top:8px;font-size:14px;line-height:1.55;color:rgba(255,255,255,.66)}
+.getx-after{
+  display:block;max-width:58ch;margin:26px auto 0;text-align:center;
+  font-size:14px;line-height:1.6;color:rgba(255,255,255,.74);
+}
+@media (min-width:640px) and (max-width:899px){
+  .getx-grid--3{grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+}
+@media (min-width:900px){
+  .getx-grid--3{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+}
+@media (min-width:1024px){
+  .getx-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+  .getx-step{padding:26px 22px}
+  .getx-num{font-size:34px}
+  .getx-title{font-size:18px}
+  .getx-desc{font-size:14.5px}
+  .getx-after{margin-top:32px;font-size:15px}
+}
+
+/* ---- four partner cards now, EASY first ---------------------------
+   The EASY mark is gold on black, so its plate keeps that ground
+   instead of being knocked out onto the white card. */
+.org-logo--ea img{max-height:none;width:100%;max-width:150px;border-radius:10px}
+@media (min-width:700px){
+  .orgs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media (min-width:1080px){
+  .orgs-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
+  .org-card{padding:26px 18px 24px}
+  .org-desc{font-size:14.5px}
+}
+
+/* ---- hero kicker: the proposition in three words ---- */
+.hero-kicker{
+  display:flex;align-items:center;gap:10px;margin-bottom:14px;
+  font-size:11.5px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--turq);
+}
+.hero-kicker i{font-style:normal;opacity:.6;font-size:13px}
+@media (min-width:1024px){.hero-kicker{font-size:12.5px;margin-bottom:16px}}
