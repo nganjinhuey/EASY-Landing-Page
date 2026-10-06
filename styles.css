@@ -2703,17 +2703,21 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
 .paid-points .ico{color:var(--icon);flex:none;margin-top:2px}
 
 @media (min-width:640px){
-  /* Cards share rows from here, and "1 CARE EPISODE PER MONTH" fits one
-     line where the other two take two — reserve the line so every
-     description starts on the same baseline. */
+  /* Cards share rows from here, and the titles run to different lengths —
+     "Unlimited Teleconsultation" fits one line above ~820px where the
+     other two take two. Reserve the line so every description starts on
+     the same baseline. */
   .incl-title{min-height:2.44em}
 }
-/* "Ambil di Farmasi atau Hantar ke Rumah" needs a third line in the
-   1024-1199 band, where the card is at its narrowest in the 3-column
-   row; the English title fits in two, so the reservation follows the
-   language rather than penalising both. .incl-title's line-height is
+/* Two bands need a third line in Malay, both of them the point where the
+   card is at its narrowest in a shared row: 640-659 as the 2-column grid
+   opens, and 1024-1199 as the 3-column one does. "1 Care Episode Setiap
+   Tempoh Kelayakan" and "Ambil di Farmasi atau Hantar ke Rumah" are the
+   long ones; the English titles fit in two, so the reservation follows
+   the language rather than penalising both. .incl-title's line-height is
    1.22, so three lines is 3.66em. */
-@media (min-width:1024px) and (max-width:1199px){
+@media (min-width:640px) and (max-width:659px),
+       (min-width:1024px) and (max-width:1199px){
   html[lang="ms-MY"] .incl-title{min-height:3.66em}
   .cej-flow{grid-template-columns:repeat(2,minmax(0,1fr))}
   .cej-step:not(:last-child)::after{display:none}
