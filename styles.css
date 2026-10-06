@@ -3070,14 +3070,14 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
 }
 @media (prefers-reduced-motion:reduce){.org-card{transition:none}.org-card:hover{transform:none}}
 
-/* One plate height for all three, then a per-logo cap so they balance by
-   eye rather than by raw height: HEYDOC is a stacked lockup, so matching
-   its height to the two single-line marks would leave its wordmark
-   noticeably smaller. Measured widths land within ~15px of each other. */
+/* One plate height for all three, then a per-logo cap so the marks
+   balance by eye rather than by raw height -- their proportions differ
+   enough that a shared cap would read as three different sizes.
+   Measured widths land within ~15px of each other. */
 .org-logo{display:flex;align-items:center;justify-content:center;height:52px;margin-bottom:16px}
 .org-logo img{width:auto;height:auto;max-width:100%;object-fit:contain}
+.org-logo--ea img{max-height:38px}
 .org-logo--wk img{max-height:38px}
-.org-logo--hd img{max-height:51px}
 .org-logo--mc img{max-height:36px}
 
 .org-name{font-size:21px;font-weight:800;letter-spacing:-.025em;line-height:1.15;color:var(--navy)}
@@ -3092,18 +3092,18 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
   .org-card{padding:24px 18px}
 }
 /* The roles run one or two lines depending on width and language
-   ("Digital Healthcare Service Provider" is the long one), which started
-   the four descriptions at different heights. Reserve the second line
-   wherever the cards sit side by side. .org-role line-height is 1.4. */
-@media (min-width:700px){
+   ("Healthcare Access Platform" is the long one), which started the
+   descriptions at different heights. Reserve the second line wherever
+   the cards sit side by side. .org-role line-height is 1.4. */
+@media (min-width:700px) and (max-width:1199px){
   .org-role{min-height:2.8em}
 }
 @media (min-width:1024px){
   .orgs-grid{gap:20px}
   .org-card{padding:30px 26px 28px}
   .org-logo{height:56px;margin-bottom:18px}
+  .org-logo--ea img{max-height:41px}
   .org-logo--wk img{max-height:41px}
-  .org-logo--hd img{max-height:55px}
   .org-logo--mc img{max-height:38px}
   .org-name{font-size:22px}
   .org-role{font-size:14.5px;margin-top:7px}
@@ -3241,18 +3241,6 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
   .getx-after{margin-top:32px;font-size:15px}
 }
 
-/* ---- four partner cards now, EASY first ---------------------------
-   The EASY mark is gold on black, so its plate keeps that ground
-   instead of being knocked out onto the white card. */
-.org-logo--ea img{max-height:none;width:100%;max-width:150px}
-@media (min-width:700px){
-  .orgs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
-}
-@media (min-width:1080px){
-  .orgs-grid{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}
-  .org-card{padding:26px 18px 24px}
-  .org-desc{font-size:14.5px}
-}
 
 /* ---- hero kicker: the proposition in three words ---- */
 .hero-kicker{
