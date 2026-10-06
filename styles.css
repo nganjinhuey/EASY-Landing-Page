@@ -3244,7 +3244,7 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
 /* ---- four partner cards now, EASY first ---------------------------
    The EASY mark is gold on black, so its plate keeps that ground
    instead of being knocked out onto the white card. */
-.org-logo--ea img{max-height:none;width:100%;max-width:150px;border-radius:10px}
+.org-logo--ea img{max-height:none;width:100%;max-width:150px}
 @media (min-width:700px){
   .orgs-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
 }
