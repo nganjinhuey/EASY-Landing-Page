@@ -3078,9 +3078,9 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
    balance by eye rather than by raw height -- their proportions differ
    enough that a shared cap would read as three different sizes.
    Measured widths land within ~15px of each other. */
-.org-logo{display:flex;align-items:center;justify-content:center;height:52px;margin-bottom:16px}
+.org-logo{display:flex;align-items:center;justify-content:center;height:104px;margin-bottom:16px}
 .org-logo img{width:auto;height:auto;max-width:100%;object-fit:contain}
-.org-logo--ea img{max-height:38px}
+.org-logo--ea img{max-height:104px;border-radius:12px}
 .org-logo--wk img{max-height:38px}
 .org-logo--mc img{max-height:36px}
 
@@ -3105,8 +3105,8 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
 @media (min-width:1024px){
   .orgs-grid{gap:20px}
   .org-card{padding:30px 26px 28px}
-  .org-logo{height:56px;margin-bottom:18px}
-  .org-logo--ea img{max-height:41px}
+  .org-logo{height:112px;margin-bottom:18px}
+  .org-logo--ea img{max-height:112px}
   .org-logo--wk img{max-height:41px}
   .org-logo--mc img{max-height:38px}
   .org-name{font-size:22px}
