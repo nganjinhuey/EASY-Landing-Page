@@ -1616,108 +1616,12 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
   .cond-card-head h3{font-size:23px}
 }
 
-/* =====================================================================
-   21. TELECONSULTATION — editorial two-column
-   ===================================================================== */
-.tele{background:linear-gradient(180deg,var(--off) 0%,var(--l-teal) 100%)}
-.tele-grid{display:grid;gap:26px}
-
-.tele-figure{
-  margin:0;border-radius:var(--r-lg);overflow:hidden;
-  box-shadow:var(--sh-float);border:1px solid rgba(7,19,63,.06);
-  background:#DCF1EF;
-}
-.tele-figure img{
-  width:100%;height:100%;display:block;
-  aspect-ratio:1/1;object-fit:cover;object-position:center 34%;
-}
-
-.tele-head .section-lede{margin-top:12px}
-/* Eligibility qualifier, not a second lede: deliberately a step down in
-   size and weight from .section-lede so it reads as a footnote to it. */
-.tele-easy{
-  margin-top:10px;font-size:13.5px;line-height:1.5;font-weight:600;
-  color:var(--accent-ink);
-}
-
-.tele-list{margin-top:26px;border-top:1px solid rgba(7,19,63,.1)}
-.tele-list li{
-  display:flex;align-items:flex-start;gap:15px;
-  padding:19px 0;border-bottom:1px solid rgba(7,19,63,.1);
-}
-.tele-mark{
-  width:40px;height:40px;border-radius:var(--r-pill);flex:none;
-  display:grid;place-items:center;
-  background:#fff;color:var(--icon);
-  box-shadow:inset 0 0 0 1px rgba(0,143,137,.18),0 4px 12px -8px rgba(7,19,63,.5);
-}
-.tele-mark .ico{width:19px;height:19px}
-.tele-list h3{font-size:16.5px;margin-bottom:4px}
-/* .tele-list p is (0,1,1) and matches these too, so both need two classes. */
-.tele-list .tele-sub{font-size:14.5px;font-weight:600;color:var(--accent-ink);margin-bottom:6px}
-.tele-list p{font-size:14px;line-height:1.55;color:var(--text-2)}
-.tele-list p b{font-weight:700;color:var(--navy)}
-.tele-list .tele-note{margin-top:7px;font-size:12.5px;font-weight:500;color:var(--text-3)}
-
-.tele-hours{
-  display:flex;align-items:flex-start;gap:10px;margin-top:20px;
-  font-size:13.5px;line-height:1.5;font-weight:600;color:var(--accent-ink);
-}
-.tele-hours .ico{color:var(--icon);margin-top:2px;flex:none}
-/* Where the service is accessed — informational, so it sits a step below
-   the availability line above it rather than beside it. */
-.tele-app{margin-top:8px;padding-left:26px;font-size:13px;line-height:1.5;color:var(--text-3)}
-
 /* The one service-platform name on the page. Enough weight and colour to
    register as a proper noun the reader should remember; not enough to
    compete with the step title above it. Uses the themed accent, so it
    reads teal on the light bands and turquoise on the dark ones. */
 .app-name{font-weight:700;color:var(--accent-ink)}
 .nobr{white-space:nowrap}
-
-@media (min-width:600px){
-  .tele-figure img{aspect-ratio:3/2;object-position:center 30%}
-}
-@media (min-width:768px){
-  .tele-grid{gap:34px}
-  .tele-easy{font-size:14px}
-  .tele-list h3{font-size:17.5px}
-  .tele-list p{font-size:15px}
-}
-@media (min-width:1024px){
-  .tele-grid{
-    grid-template-columns:minmax(0,.92fr) minmax(0,1fr);
-    column-gap:64px;align-items:center;
-  }
-  .tele-figure img{aspect-ratio:4/5;object-position:center 42%}
-  .tele-easy{margin-top:12px;font-size:14.5px}
-  .tele-list{margin-top:32px}
-  .tele-list li{padding:22px 0;gap:18px}
-  .tele-list h3{font-size:19px}
-  .tele-list p{font-size:15.5px}
-  .tele-mark{width:46px;height:46px}
-  .tele-mark .ico{width:22px;height:22px}
-  .tele-hours{font-size:15px;margin-top:26px}
-  .tele-app{font-size:14px;margin-top:9px}
-}
-
-/* Conditions carries its own section head now, so it no longer runs on
-   from the benefits block and takes the standard band rhythm. */
-.tele{padding-block:calc(var(--sec-y) * .8)}
-
-/* Mobile runs heading → image → rows; desktop puts the image in the left column */
-.tele-list{margin-top:0}
-@media (min-width:1024px){
-  .tele-grid{
-    grid-template-areas:"figure head" "figure body";
-    grid-template-columns:minmax(0,.92fr) minmax(0,1fr);
-    column-gap:64px;row-gap:0;align-items:stretch;
-  }
-  .tele-figure{grid-area:figure;align-self:center}
-  .tele-head{grid-area:head;align-self:end;padding-bottom:10px}
-  .tele-body{grid-area:body;align-self:start}
-  .tele-list{margin-top:0}
-}
 
 /* =====================================================================
    22. HOW WECARE WORKS — consolidated three-step journey
@@ -2001,6 +1905,10 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
   border-top:1px solid rgba(255,255,255,.12);
 }
 .ac-panel p+p{padding-top:0;border-top:0;margin-top:-6px}
+/* The RM40 is the figure the reader is scanning for, so it leads the panel
+   as a line of its own instead of opening a sentence. */
+.ac-panel .ac-amt{font-size:15px;font-weight:700;color:#fff;margin-bottom:9px}
+.ac-panel .ac-amt+p{margin-top:0}
 
 @media (min-width:900px){
   .ac-media{height:190px}
@@ -2590,12 +2498,7 @@ html:not(.js) [data-slot]>img[data-optional]{opacity:1}
 }
 .tm-bar .ico{color:var(--icon);flex:none;margin-top:1px}
 @media (min-width:768px){
-  .tele-list .tele-sub{font-size:15px}
-  .tele-list .tele-note{font-size:13px}
   .tm-bar{margin-top:32px;font-size:15px;align-items:center;text-align:center;border-radius:var(--r-pill)}
-}
-@media (min-width:1024px){
-  .tele-list .tele-sub{font-size:15.5px}
 }
 
 /* =====================================================================

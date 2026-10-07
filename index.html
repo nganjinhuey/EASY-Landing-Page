@@ -18,7 +18,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" as="image" href="images/wecare-hero-640.jpg" imagesrcset="images/wecare-hero-640.jpg 640w, images/wecare-hero-960.jpg 960w, images/wecare-hero-1280.jpg 1280w, images/wecare-hero-1672.jpg 1672w" imagesizes="100vw" fetchpriority="high">
 <link href="https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@700;800;900&family=Red+Hat+Text:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=149">
+<link rel="stylesheet" href="styles.css?v=152">
 <script>document.documentElement.classList.add("js");</script>
 </head>
 <body>
@@ -421,7 +421,7 @@
           <p class="incl-desc" data-i18n="incl.d2">Apabila ubat diperlukan, gunakan Care Episode anda untuk mendapatkan ubat yang layak.</p>
           <div class="incl-value">
             <p class="incl-amount" data-i18n="incl.amt">Sehingga RM40</p>
-            <p class="incl-amount-sub" data-i18n="incl.amtsub">Untuk ubat yang layak, termasuk penghantaran.</p>
+            <p class="incl-amount-sub" data-i18n="incl.amtsub">Dikongsi antara ubat yang layak dan sebarang caj penghantaran.</p>
           </div>
           <p class="incl-fine" data-i18n="incl.f2">Telekonsultasi percuma dan tanpa had.</p>
         </div>
@@ -438,7 +438,7 @@
         <div class="incl-body">
           <h3 class="incl-title" data-i18n="incl.t3">Ambil di Farmasi atau Hantar ke Rumah</h3>
           <p class="incl-desc" data-i18n="incl.d3">Ambil ubat preskripsi anda di farmasi yang mengambil bahagian atau pilih penghantaran terus ke rumah.</p>
-          <p class="incl-fine" data-i18n="incl.f3">Caj penghantaran termasuk dalam had RM40.</p>
+          <p class="incl-fine" data-i18n="incl.f3">Jika anda memilih penghantaran, caj tersebut termasuk dalam had RM40.</p>
         </div>
       </li>
     </ul>
@@ -487,59 +487,7 @@
   </div>
 </section>
 
-<!-- ============ 5. TELECONSULTATION ============ -->
-<section class="section tele" aria-labelledby="tele-title">
-  <div class="container tele-grid">
-    <header class="tele-head reveal">
-      <p class="eyebrow" data-i18n="tele.eyebrow">Telekonsultasi</p>
-      <h2 id="tele-title" data-i18n="tele.h2">Manfaat Telekonsultasi Anda</h2>
-      <p class="section-lede" data-i18n="tele.lede">Dapatkan akses mudah kepada doktor untuk masalah kesihatan harian yang biasa, di mana sahaja anda berada.</p>
-    </header>
-
-    <figure class="tele-figure reveal">
-      <img src="images/tele-900.jpg"
-           srcset="images/tele-560.jpg 560w, images/tele-900.jpg 900w"
-           sizes="(min-width:1024px) 46vw, calc(100vw - 40px)"
-           data-i18n-alt="tele.alt" alt="Seorang wanita di rumah berunding dengan doktor melalui aplikasi kesihatan pada telefonnya."
-           width="1145" height="1374" loading="lazy" decoding="async">
-    </figure>
-
-    <div class="tele-body">
-      <ul class="tele-list reveal">
-        <li>
-          <span class="tele-mark"><svg class="ico" aria-hidden="true"><use href="#i-pin"/></svg></span>
-          <div>
-            <h3 data-i18n="tele.t1">Bercakap Dengan Doktor, Di Mana Sahaja</h3>
-            <p data-i18n="tele.d1">Bercakap dengan doktor dengan mudah dari mana sahaja anda berada, tanpa perlu ke klinik untuk mendapatkan konsultasi.</p>
-          </div>
-        </li>
-        <li>
-          <span class="tele-mark"><svg class="ico" aria-hidden="true"><use href="#i-timer"/></svg></span>
-          <div>
-            <h3 data-i18n="tele.t2">Jimat Masa</h3>
-            <p data-i18n="tele.d2">Tak perlu keluar rumah. Tak perlu tunggu giliran. Dapatkan nasihat perubatan tanpa perlu membuang masa ke klinik.</p>
-          </div>
-        </li>
-        <li>
-          <span class="tele-mark"><svg class="ico" aria-hidden="true"><use href="#i-home"/></svg></span>
-          <div>
-            <h3 data-i18n="tele.t3">Kekal Selesa</h3>
-            <p data-i18n="tele.d3">Dapatkan konsultasi dengan doktor secara peribadi dari keselesaan rumah anda sendiri.</p>
-          </div>
-        </li>
-      </ul>
-
-      <p class="tele-hours reveal">
-        <svg class="ico ico-sm" aria-hidden="true"><use href="#i-clock"/></svg>
-        <span data-i18n="hours.line2">Telekonsultasi tersedia setiap hari dari 9&nbsp;pagi hingga 10&nbsp;malam, termasuk hujung minggu dan cuti umum.</span>
-      </p>
-
-      <p class="tele-app reveal" data-i18n="tele.app">Telekonsultasi diakses melalui <b class="app-name">aplikasi MiCare MyMed</b>.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 6. HOW WECARE LITE WORKS ============ -->
+<!-- ============ 5. HOW WECARE LITE WORKS ============ -->
 <section class="section hww on-dark" id="how-it-works" aria-labelledby="hww-title">
   <div class="container">
     <header class="section-head reveal">
@@ -604,8 +552,9 @@
         </button>
         <div class="ac-panel" id="ac-p3" role="region" aria-labelledby="ac-b3">
           <div class="ac-panel-inner">
-          <p data-i18n="hww.p3a">Sehingga RM40 bagi setiap Care Episode untuk ubat yang layak, termasuk penghantaran.</p>
-          <p data-i18n="hww.p3b">Buat pesanan penghantaran sebelum 5&nbsp;petang setiap hari.</p>
+          <p class="ac-amt" data-i18n="hww.amt3">Sehingga RM40 bagi setiap Care Episode</p>
+          <p data-i18n="hww.p3a">Untuk ubat yang layak. Jika anda memilih penghantaran, caj penghantaran termasuk dalam had RM40 tersebut.</p>
+          <p data-i18n="hww.p3b">Pesanan penghantaran mesti dibuat sebelum 5&nbsp;petang setiap hari.</p>
           </div>
         </div>
       </li>
@@ -613,7 +562,7 @@
   </div>
 </section>
 
-<!-- ============ 7. TWO-PLATFORM JOURNEY ============ -->
+<!-- ============ 6. TWO-PLATFORM JOURNEY ============ -->
 <section class="section apps" id="apps" aria-labelledby="apps-title">
   <div class="container">
     <header class="section-head apps-head reveal">
@@ -673,7 +622,7 @@
   </div>
 </section>
 
-<!-- ============ 8. HOW TO GET WECARE LITE ============ -->
+<!-- ============ 7. HOW TO GET WECARE LITE ============ -->
 <section class="section getx on-dark" id="how-to-get" aria-labelledby="getx-title">
   <div class="container">
     <header class="section-head reveal">
@@ -704,7 +653,7 @@
   </div>
 </section>
 
-<!-- ============ 9. THE PARTNERS ============ -->
+<!-- ============ 8. THE PARTNERS ============ -->
 <section class="section orgs" id="partners" aria-labelledby="orgs-title">
   <div class="container">
     <header class="section-head reveal">
@@ -744,7 +693,7 @@
   </div>
 </section>
 
-<!-- ============ 10. WEKONGSI COST-SHARING ============ -->
+<!-- ============ 9. WEKONGSI COST-SHARING ============ -->
 <section class="section wk on-dark" aria-labelledby="wk-title">
   <div class="container wk-grid">
     <figure class="wk-figure reveal" data-slot>
@@ -781,7 +730,7 @@
   </div>
 </section>
 
-<!-- ============ 11. FAQ ============ -->
+<!-- ============ 10. FAQ ============ -->
 <section class="section faq" id="faq" aria-labelledby="faq-title">
   <div class="container container--narrow">
     <header class="section-head reveal">
@@ -830,11 +779,11 @@
         </div>
         <div class="faq-item">
           <h3><button type="button" class="faq-q" aria-expanded="true" aria-controls="faq-p23" id="faq-b23" data-i18n="faq.q23">Bolehkah saya memilih sama ada mengambil ubat di farmasi atau dihantar ke rumah?<svg class="ico ico-sm faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
-          <div class="faq-a" id="faq-p23" role="region" aria-labelledby="faq-b23"><div class="faq-a-inner" data-i18n="faq.a23"><p>Boleh. Anda boleh mengambil ubat preskripsi di farmasi yang mengambil bahagian atau memilih penghantaran ke rumah. Caj penghantaran termasuk dalam had RM40.</p></div></div>
+          <div class="faq-a" id="faq-p23" role="region" aria-labelledby="faq-b23"><div class="faq-a-inner" data-i18n="faq.a23"><p>Boleh. Anda boleh mengambil ubat preskripsi di farmasi yang mengambil bahagian atau memilih penghantaran ke rumah. Jika anda memilih penghantaran, caj penghantaran termasuk dalam had RM40, jadi baki untuk ubat menjadi kurang.</p></div></div>
         </div>
         <div class="faq-item">
           <h3><button type="button" class="faq-q" aria-expanded="true" aria-controls="faq-p24" id="faq-b24" data-i18n="faq.q24">Apakah Care Episode?<svg class="ico ico-sm faq-chevron" aria-hidden="true"><use href="#i-chevron"/></svg></button></h3>
-          <div class="faq-a" id="faq-p24" role="region" aria-labelledby="faq-b24"><div class="faq-a-inner" data-i18n="faq.a24"><p>Care Episode ialah manfaat yang boleh digunakan sekali setiap tempoh kelayakan untuk ubat yang layak selepas konsultasi dan preskripsi doktor, sehingga <b>RM40</b> termasuk penghantaran.</p></div></div>
+          <div class="faq-a" id="faq-p24" role="region" aria-labelledby="faq-b24"><div class="faq-a-inner" data-i18n="faq.a24"><p>Care Episode ialah manfaat yang boleh digunakan sekali setiap tempoh kelayakan untuk ubat yang layak selepas konsultasi dan preskripsi doktor, sehingga <b>RM40</b> &mdash; had yang sama turut meliputi sebarang caj penghantaran.</p></div></div>
         </div>
       </div>
     </div>
@@ -858,7 +807,7 @@
   </div>
 </section>
 
-<!-- ============ 12. FINAL CTA ============ -->
+<!-- ============ 11. FINAL CTA ============ -->
 <section class="final-cta on-dark" id="final-cta" aria-labelledby="final-title">
   <div class="fc-deco" aria-hidden="true">
     <svg viewBox="0 0 600 300" preserveAspectRatio="xMidYMid slice">
@@ -883,7 +832,7 @@
 
 </main>
 
-<!-- ============ 13. FOOTER ============ -->
+<!-- ============ 12. FOOTER ============ -->
 <footer class="site-footer on-dark">
   <div class="container footer-inner">
     <div class="footer-brand">
@@ -915,13 +864,13 @@
   </div>
 
   <div class="container footer-legal">
-    <p data-i18n="foot.legal">WeCare Lite ialah manfaat penjagaan kesihatan pesakit luar yang diedarkan oleh EASY dan diaktifkan di platform WeKongsi. Telekonsultasi percuma dan tanpa had. Had RM40 bagi setiap Care Episode terpakai untuk kos ubat yang layak, termasuk penghantaran; sebarang jumlah melebihi RM40 ditanggung oleh ahli.</p>
+    <p data-i18n="foot.legal">WeCare Lite ialah manfaat penjagaan kesihatan pesakit luar yang diedarkan oleh EASY dan diaktifkan di platform WeKongsi. Telekonsultasi percuma dan tanpa had. Had RM40 bagi setiap Care Episode terpakai untuk kos ubat yang layak dan sebarang caj penghantaran secara keseluruhan; sebarang jumlah melebihi RM40 ditanggung oleh ahli.</p>
     <p class="footer-disclaimer" data-i18n="foot.notins">WeKongsi bukan syarikat insurans dan tidak menyediakan insurans. WeCare Lite ialah manfaat penjagaan kesihatan, dan perkongsian kos perubatan WeKongsi ialah program komuniti &mdash; bukan polisi insurans.</p>
     <p class="footer-copy">&copy; <span data-year>2026</span> WeKongsi. <span data-i18n="foot.rights">Hak cipta terpelihara.</span></p>
   </div>
 </footer>
 
-<!-- ============ 14. MOBILE STICKY CTA ============ -->
+<!-- ============ 13. MOBILE STICKY CTA ============ -->
 <div class="sticky-cta" id="sticky-cta">
   <div class="sticky-inner">
     <div class="sticky-text">
@@ -932,13 +881,13 @@
   </div>
 </div>
 
-<!-- ============ 15. WHATSAPP CONTACT ============ -->
+<!-- ============ 14. WHATSAPP CONTACT ============ -->
 <a class="wa-fab" href="https://wa.me/601176066551?text=Hi%20EASY%20Admin%2C%20saya%20ingin%20mendapatkan%20kod%20promosi%20WeCare%20Lite%20saya." target="_blank" rel="noopener noreferrer" data-i18n-href="wa.href"
    aria-label="Perlukan kod promosi anda? WhatsApp EASY Admin di +60 11-7606 6551" data-i18n-aria="wa.aria">
   <span class="wa-icon" aria-hidden="true"><svg class="ico ico-brand"><use href="#i-whatsapp"/></svg></span>
   <span class="wa-label" aria-hidden="true" data-i18n="wa.label">Perlukan kod promosi? <b>WhatsApp EASY Admin</b></span>
 </a>
 
-<script src="script.js?v=149" defer></script>
+<script src="script.js?v=152" defer></script>
 </body>
 </html>
