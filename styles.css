@@ -206,18 +206,30 @@ h3{font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
 }
 .header-inner{display:flex;align-items:center;gap:12px;min-height:68px}
 
-.brand{display:flex;align-items:center;gap:10px;margin-right:auto;min-width:0}
+.brand{display:flex;align-items:center;gap:10px;margin-right:auto;flex:none}
 /* EASY leads, the healthcare ecosystem follows a hairline. The EASY mark
    keeps its own gold identity — the knock-out filter below is scoped to
    the WeKongsi and WeCare marks only. */
 .brand-easy{height:26px;width:auto;max-width:none;flex:none}
-.brand-logo{height:24px;width:auto;filter:brightness(0) invert(1);opacity:.96}
+.brand-logo{height:24px;width:auto;flex:none;filter:brightness(0) invert(1);opacity:.96}
 .brand-divider{width:1px;height:22px;background:var(--line-2);flex:none}
 /* The supplied WeCare lockup is stacked (mark over wordmark) with a navy
    wordmark, so on the dark header it takes the same knock-out treatment as
    the WeKongsi mark and returns to full colour once the header goes light. */
 .site-nav{display:none}
 .header-cta{flex:none}
+/* The promo code comes first and the WeKongsi registration second, so the
+   header carries both in that order. The nav is absolutely centred, which
+   means the right-hand cluster has to clear it — the second button is held
+   back until there is room. */
+/* Styled from the header's own tokens rather than .btn-ghost, which is
+   forced to a white background further down and would read as a second
+   solid button on a header that is dark in both of its states. */
+.header-cta2{
+  display:none;flex:none;font-weight:600;
+  background:var(--glass);border:1px solid var(--line-2);color:var(--text);
+}
+.header-cta2:hover{background:var(--glass-2);border-color:var(--accent-ink);color:var(--accent-ink)}
 
 /* ---- language switch ----------------------------------------------
    Two letters each, so it stays out of the way of the brand and the
@@ -276,20 +288,34 @@ h3{font-size:18px;font-weight:700;letter-spacing:-.02em;line-height:1.25}
   .section-head{margin-bottom:56px}
   .section-lede{font-size:18px}
 
+}
+
+/* The nav used to be absolutely centred, which meant it could not run out
+   of room — it simply overlapped. In Malay ("Masalah Kesihatan" and the
+   rest run ~500px) it sat on top of both the brand and the CTA at 1024.
+   It now lays out in flow with auto side margins, so it centres in the
+   space that is actually free and the header can never overlap itself.
+   The cost is that it needs that space. Measured: the nav fits beside
+   both CTAs only from 1250px, and it did not honestly fit at 1024 even
+   before the second one. The registration CTA is the more useful of the
+   two on a one-scroll page, so it comes in at 1024 and the nav waits. */
+@media (min-width:1250px){
+  .brand{margin-right:0}
   .site-nav{
-    display:flex;align-items:center;gap:6px;
-    position:absolute;left:50%;transform:translateX(-50%);
+    display:flex;align-items:center;gap:3px;margin-inline:auto;
     background:var(--glass);border:1px solid var(--line);
     -webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);
-    padding:6px;border-radius:var(--r-pill);
+    padding:5px;border-radius:var(--r-pill);
   }
   .site-nav a{
-    font-size:14.5px;font-weight:500;color:var(--text-2);
-    padding:10px 18px;border-radius:var(--r-pill);
+    font-size:14px;font-weight:500;color:var(--text-2);white-space:nowrap;
+    padding:9px 12px;border-radius:var(--r-pill);
     transition:color .2s ease,background-color .2s ease;
   }
   .site-nav a:hover{color:var(--text);background:var(--glass-2)}
-  .header-inner{position:relative}
+}
+@media (min-width:1024px){
+  .header-cta2{display:inline-flex}
 }
 
 /* =====================================================================
